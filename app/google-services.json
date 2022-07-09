@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "540844786777",
+    "project_id": "lyst-shop",
+    "storage_bucket": "lyst-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540844786777:android:da98baffdd5fa7bab75d48",
+        "android_client_info": {
+          "package_name": "com.example.lyst_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540844786777-8fm5ngv6ufuibc98b5i9ld2obo0hh353.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVLzFjnUJIquOfkg0tVtczBKCN3T9SmF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540844786777-8fm5ngv6ufuibc98b5i9ld2obo0hh353.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
