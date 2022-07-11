@@ -7,6 +7,7 @@ import android.os.Handler
 import android.util.Log
 import com.example.lyst_shop.MainActivity
 import com.example.lyst_shop.databinding.ActivitySplachBinding
+import com.example.lyst_shop.db.MyDataBase
 import com.example.lyst_shop.model.PagesModle
 import com.example.lyst_shop.model.ProductModle
 import com.google.firebase.firestore.FirebaseFirestore
@@ -23,6 +24,10 @@ class SplachActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplachBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var db = MyDataBase(this)
+        var a = db.addId("SDasd")
+        Log.e("ASD",a.toString()+"ASDDDDSAAAA")
+
         getPages()
     }
 

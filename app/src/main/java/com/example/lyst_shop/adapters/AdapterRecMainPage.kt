@@ -31,22 +31,28 @@ class AdapterRecMainPage(var arr: ArrayList<PagesModle>) :
 
         Picasso.get().load(arr[position].imageUrl).into(holder.binding.imvShopImageView)
 
-        Log.e("ASD", arr[position].posts.toString())
-        if (arr[position].posts != null) {
-            Picasso.get().load(arr[position].posts!![arr[position].posts!!.size - 1].imageUrl)
-                .into(holder.binding.imagePost)
+         if (arr[position].posts != null) {
+
         }
         if (position % 5 == 0) {
             holder.binding.titleText.visibility = View.GONE
             holder.binding.titleImage.visibility = View.VISIBLE
-
         } else {
             holder.binding.titleText.visibility = View.VISIBLE
             holder.binding.titleImage.visibility = View.GONE
         }
-
         holder.binding.recProduct.layoutManager = GridLayoutManager(context, 2)
         holder.binding.recProduct.adapter = AdapterShowProduct(arr[position].posts ?: ArrayList())
+
+
+
+
+
+
+
+
+
+
 
     }
 
