@@ -1,6 +1,7 @@
 package com.example.lyst_shop.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,30 +25,32 @@ class AdapterRecMainPage(var arr: ArrayList<PagesModle>) :
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
-        holder.binding.shoopName.text = arr[position].name
-        holder.binding.shoopName2.text = arr[position].name
+        holder.binding.shoopName.text = arr[position].name ?: " "
+        holder.binding.shoopName2.text = arr[position].name ?: " "
 
         Picasso.get().load(arr[position].imageUrl).into(holder.binding.imvShopImageView)
-        if (arr[position].posts?.size != 0) {
+
+        Log.e("ASD", arr[position].posts.toString())
+        if (arr[position].posts != null) {
             Picasso.get().load(arr[position].posts!![arr[position].posts!!.size - 1].imageUrl)
                 .into(holder.binding.imagePost)
         }
-
         if (position % 5 == 0) {
             holder.binding.titleText.visibility = View.GONE
             holder.binding.titleImage.visibility = View.VISIBLE
+
         } else {
             holder.binding.titleText.visibility = View.VISIBLE
             holder.binding.titleImage.visibility = View.GONE
         }
 
         holder.binding.recProduct.layoutManager = GridLayoutManager(context, 2)
-        holder.binding.recProduct.adapter = AdapterShowProduct(ArrayList())
+        holder.binding.recProduct.adapter = AdapterShowProduct(arr[position].posts ?: ArrayList())
 
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return arr.size
     }
 
 }

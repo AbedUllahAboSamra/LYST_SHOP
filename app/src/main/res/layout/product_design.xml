@@ -41,7 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="2dp"
+            >
 
             <TextView
                 android:id="@+id/tv_price"
@@ -49,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="$120"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_11sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
             <TextView
@@ -59,7 +61,7 @@
                 android:layout_marginHorizontal="4dp"
                 android:text="$100"
                 android:textColor="#D80000"
-                android:textSize="@dimen/_11sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
             <Space
@@ -76,23 +78,27 @@
         </LinearLayout>
 
         <TextView
+            android:layout_marginHorizontal="2dp"
+
             android:id="@+id/tv_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="2"
             android:text="ov _ wight asd ksodk asdplm ,aspfdkm ,apsdlm, paslm,aspod psod, apsod, aspd, aspod, "
             android:textColor="#000"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_10sdp"
             android:textStyle="bold" />
 
         <TextView
+            android:layout_marginHorizontal="2dp"
+
             android:id="@+id/tv_antherText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="4dp"
             android:maxLines="2"
             android:text="ov _ wight asd ksodk asdplm ,aspfdkm ,apsdlm, paslm,aspod psod, apsod, aspd, aspod, "
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_11sdp"
             android:textStyle="bold" />
 
     </LinearLayout>

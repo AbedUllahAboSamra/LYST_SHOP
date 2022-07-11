@@ -138,72 +138,42 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="8dp"
                     android:text="Update weekly"
-                    android:textSize="@dimen/_9sdp" />
+                    android:textSize="@dimen/_9sdp"
+                    android:textStyle="bold" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_250sdp"
-
+                    android:layout_height="wrap_content"
                     >
 
                     <ImageView
-                        android:id="@+id/image_post"
+                        android:foreground="#2A000000"                        android:id="@+id/image_post"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:foreground="@drawable/image_shap"
+                        android:layout_height="@dimen/_250sdp"
+                        android:layout_marginBottom="8dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/a1" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:gravity="center"
-                        android:orientation="vertical"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="16dp"
+                >
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abkipkopk oijoij okjo oj"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_gravity="center|bottom"
 
-                        >
-
-                        <TextView
-                            android:id="@+id/productText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Abkipkosspk oijoij okjo oj :"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/_9sdp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/productDescription"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="@dimen/_70sdp"
-                            android:layout_marginVertical="16dp"
-                            android:fontFamily="@font/stoke_light"
-                            android:gravity="center"
-                            android:text="The Best Classic Shasd oes This Season"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold" />
-
-                        <com.google.android.material.divider.MaterialDivider
-                            android:layout_width="20dp"
-                            android:layout_height="2dp"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="16dp"
-                            app:dividerColor="@color/white" />
-
-                        <TextView
-                            android:id="@+id/btn_TabToExplore"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tap to explore"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
+                    />
+                
+            </LinearLayout>
 
                 </FrameLayout>
             </LinearLayout>

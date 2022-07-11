@@ -17,5 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.recMainPage.layoutManager = LinearLayoutManager(this)
         binding.recMainPage.adapter = AdapterRecMainPage(SplachActivity.pagesArray)
+
+
     }
 }

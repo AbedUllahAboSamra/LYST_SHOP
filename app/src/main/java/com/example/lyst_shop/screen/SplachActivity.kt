@@ -23,7 +23,6 @@ class SplachActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplachBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         getPages()
     }
 
@@ -32,7 +31,6 @@ class SplachActivity : AppCompatActivity() {
             .collection("pages")
             .get()
             .addOnSuccessListener { pages ->
-                Log.e("aasd", pages.size().toString() + "pages")
                 var index = 0
                 for (page in pages) {
                     var following = ArrayList<String>()
@@ -54,31 +52,24 @@ class SplachActivity : AppCompatActivity() {
                         .get()
                         .addOnSuccessListener { postsIds ->
                             for (a in postsIds) {
-                                FirebaseFirestore.getInstance()
-                                    .collection("posts")
-                                    .document(a.id)
-                                    .get()
-                                    .addOnSuccessListener { apost ->
-                                        var post = ProductModle(
-                                            id = a.id,
-                                            name = apost.getString("name").toString(),
-                                            brand = apost.getString("brand").toString(),
-                                            text = apost.getString("text").toString(),
-                                            discribtion = apost.getString("discribtion").toString(),
-                                            price = apost.getDouble("price")!!.toDouble(),
-                                            discount = apost.getDouble("discount")!!.toDouble()
-                                                ?: 0.0,
-                                            likes = null,
-                                            posterId = apost.getString("discribtion").toString(),
-                                            posterName = apost.getString("posterName").toString(),
-                                            posterImageL = apost.getString("posterImageL")
-                                                .toString(),
-                                            imageUrl = apost.getString("imageUrl")
-                                                .toString()
-                                        )
+                                var post = ProductModle(
+                                    id = a.id,
+                                    name = a.getString("name").toString(),
+                                    brand = a.getString("brand").toString(),
+                                    text = a.getString("text").toString(),
+                                    discribtion = a.getString("discribtion").toString(),
+                                    price = a.getDouble("price")?.toDouble() ?: 0.0,
+                                    discount = a.getDouble("discount")?.toDouble() ?: 0.0,
+                                    likes = null,
+                                    posterId = a.getString("posterId").toString(),
+                                    posterName = a.getString("posterName").toString(),
+                                    posterImageL = a.getString("posterImageL")
+                                        .toString(),
+                                    imageUrl = a.getString("imageUrl")
+                                        .toString()
+                                )
 
-                                        posts.add(post)
-                                    }
+                                posts.add(post)
 
 
                             }
@@ -93,9 +84,10 @@ class SplachActivity : AppCompatActivity() {
                         posts = posts,
                         prands = null,
                         imageUrl = page.getString("imageUrl").toString()
-
                     )
                     index++
+
+
                     pagesArray.add(pageModle)
                     if (index == pages.size()) {
                         Handler().postDelayed({
@@ -108,6 +100,8 @@ class SplachActivity : AppCompatActivity() {
 
 
             }
-            .addOnFailureListener {}
+            .addOnFailureListener {
+                Log.e("ASD", it.toString() + "ASD FAIL")
+            }
     }
 }
