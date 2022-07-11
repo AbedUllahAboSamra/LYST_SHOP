@@ -27,6 +27,7 @@ class AdapterRecMainPage(var arr: ArrayList<PagesModle>) :
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         holder.binding.shoopName.text = arr[position].name ?: " "
         holder.binding.shoopName2.text = arr[position].name ?: " "
+        //
 
         Picasso.get().load(arr[position].imageUrl).into(holder.binding.imvShopImageView)
 
